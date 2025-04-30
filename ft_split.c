@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 14:44:15 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 16:25:39 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:12:20 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*allocate_word(const char *s, int start, int end)
 	int		i;
 
 	i = 0;
-	if (!s)
+	if (!s || start >= end)
 		return (NULL);
 	word = malloc((end - start + 1) * sizeof(char));
 	if (!word)

@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:09:40 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 18:28:57 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/04/30 11:40:37 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,11 @@ int	main(void){
 	printf("Antes (ft_memmove):    %s\n", str2);
 	ft_memmove(str2 + 4, str2 + 2, 4);
 	printf("Depois (ft_memmove): %s\n", str2);
+	char buffer[] = "123456789";
+	ft_memmove(buffer , buffer + 2, 5);
+	printf("Memmove: %s\n", buffer);
+	ft_memcpy(buffer + 2, buffer, 5);
+	printf("Memcpy: %s\n", buffer);
 }
+
 */

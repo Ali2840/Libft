@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:07:06 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 19:30:23 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:56:46 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 	size_t	len;
-	size_t MAX;
-	if(nmemb == 0|| size == 0)
-		return(malloc(0));
+	size_t	MAX;
+
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
 	MAX = (size_t)-1;
 	if (size && nmemb > MAX / size)
 		return (NULL);
@@ -29,7 +30,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, len);
 	return (ptr);
 }
-
+/*
 int	main(void)
 {
 	int	*arr;
@@ -45,3 +46,4 @@ int	main(void)
 		printf("Falha na alocação!\n");
 	free(arr);
 }
+*/

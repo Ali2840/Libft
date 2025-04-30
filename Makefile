@@ -14,27 +14,27 @@ SRC_OBJS = \
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJS = $(SRC:.c=.o)
-BOBJECTS = $(SRC_OBJS:.c=.o)
+BOBJS = $(SRC_OBJS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) -rcs $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(SRC_OBJS)
-	$(AR) -rcs $(NAME) $(SRC_OBJS)
+bonus: $(BOBJS)
+	$(AR) -rcs $(NAME) $(BOBJS)
 	@touch bonus
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BOBJS) bonus
 
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean 
+re: fclean all
 
 .PHONY: all clean fclean re
 
