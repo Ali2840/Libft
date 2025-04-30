@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:09:40 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/30 11:40:37 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:22:38 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*src_str;
 
 	i = 0;
-	if (!dest && !src)
-		return (NULL);
 	dest_str = (unsigned char *)dest;
 	src_str = (unsigned char *)src;
 	if (dest < src)

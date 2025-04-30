@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:09:29 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 18:24:45 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:22:22 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*src_str;
 	size_t			i;
 
-	if (!dest && !src)
-		return (NULL);
 	dest_str = (unsigned char *)dest;
 	src_str = (unsigned char *)src;
 	i = 0;

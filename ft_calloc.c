@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:07:06 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/30 12:56:46 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:19:56 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 	size_t	len;
-	size_t	MAX;
+	size_t	max_size;
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
-	MAX = (size_t)-1;
-	if (size && nmemb > MAX / size)
+	max_size = (size_t)-1;
+	if (size && nmemb > max_size / size)
 		return (NULL);
 	len = nmemb * size;
 	ptr = malloc(len);
@@ -30,6 +30,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, len);
 	return (ptr);
 }
+
 /*
 int	main(void)
 {
