@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:08:41 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 16:08:43 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/01 16:19:36 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int	main(void){
 		printf("Erro a criar nós.\n");
 		return (1);
 	}
-	ft_lstadd_front(&lst, node1);
-	ft_lstadd_front(&lst, node2);
-	ft_lstadd_front(&lst, node3);
+	ft_lstadd_back(&lst, node1);
+	ft_lstadd_back(&lst, node2);
+	ft_lstadd_back(&lst, node3);
 
-	ft_lstlast(lst);
-	printf("O ultimo no da lista e: %s\n", (char *)lst->content);
+	t_list *last = ft_lstlast(lst);
+	printf("O ultimo no da lista e: %s\n", (char *)last->content);
 }
 	*/

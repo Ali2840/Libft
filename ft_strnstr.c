@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:43:37 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 16:11:55 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/01 18:34:31 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 int	main(void)
 {
 	char	str[] = "Welcome";
-	char	string2[] = "";
+	char	string2[] = "co";
 	size_t	n;
 	char	*res;
 

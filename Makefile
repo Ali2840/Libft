@@ -21,8 +21,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) -rcs $(NAME) $(OBJS)
 
-bonus: $(BOBJS)
-	$(AR) -rcs $(NAME) $(BOBJS)
+bonus:  $(OBJS) $(BOBJS)
+	$(AR) -rcs $(NAME) $(OBJS) $(BOBJS)
 	@touch bonus
 
 %.o : %.c

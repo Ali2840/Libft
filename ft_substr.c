@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:12:11 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 17:21:18 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/01 19:07:59 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 /*
 int	main(void){
-	char *str = "Hello Geeks!";
+	char *str = "Hello!";
 	char *sub = ft_substr(str, 30, 5);
 	printf("%s\n", sub);
 	free(sub);

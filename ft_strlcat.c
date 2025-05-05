@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:11:20 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 18:00:23 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/01 18:19:43 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (src_size);
 	if (size <= dst_size)
 		return (size + src_size);
-	if (src_size <= size - dst_size - 1)
-		ft_strncat(dst, src, size - dst_size - 1);
-	else
-		ft_strncat(dst, src, size - dst_size - 1);
+	ft_strncat(dst, src, size - dst_size - 1);
 	return (dst_size + src_size);
 }
 

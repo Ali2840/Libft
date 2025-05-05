@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:12:00 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 16:12:01 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/01 18:36:27 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(void)
 	int			ch;
 	char		*str;
 
-	ch = ' ';
+	ch = 'l';
 	str = ft_strrchr(s, ch);
 	if (str != NULL)
 		printf("%s\n", str);
