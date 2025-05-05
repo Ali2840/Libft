@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:07:53 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 16:07:54 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:21:03 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_itoa(int n)
 	nbr = n;
 	len = ft_countdigits(nbr);
 	result = malloc((len + 1) * sizeof(char));
+	if (nbr == 0)
+		result[0] = '0';
 	if (!result)
 		return (NULL);
 	result[len] = '\0';
@@ -31,8 +33,6 @@ char	*ft_itoa(int n)
 		nbr = -nbr;
 		result[0] = '-';
 	}
-	if (nbr == 0)
-		result[0] = '0';
 	while (nbr != 0)
 	{
 		result[len - 1] = (nbr % 10) + '0';

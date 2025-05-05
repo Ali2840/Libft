@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:12:11 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/05/01 19:07:59 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:26:47 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	i = 0;
-	slen = ft_strlen((char *)s);
+	slen = ft_strlen(s);
 	if (start > slen)
 		return (ft_strdup(""));
 	if (len > slen - start)
 		len = slen - start;
-	ss = malloc(sizeof(char) * len + 1);
+	ss = malloc(sizeof(char) * (len + 1));
 	if (!ss)
 		return (NULL);
 	while (i < len)

@@ -6,21 +6,24 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:08:23 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/05/01 17:55:31 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:28:53 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
 void	del_content(void *content)
 {
 	free(content);
 }
-
+*/
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
+	if (!lst || !del)
+		return ;
 	while (*lst)
 	{
 		tmp = (*lst)->next;
@@ -30,7 +33,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	*lst = NULL;
 }
 /*
-int main()
+int	main(void)
 {
 	t_list	*lst;
 	t_list	*node1;
