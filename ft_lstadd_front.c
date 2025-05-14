@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:08:16 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/05/01 17:04:08 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/09 12:28:51 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,26 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst && new)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
 /*
 int	main(void)
 {
-	t_list	*list;
-	t_list	*node1;
-	t_list	*node2;
-	t_list	*current;
-
-	list = NULL;
-	node1 = ft_lstnew("First");
-	node2 = ft_lstnew("Second");
-	if(!node1 || !node2)
-		printf("Erro ao criar nos. \n");
-	list = node1;
-	ft_lstadd_front(&list , node2);
-	current = list;
-	while (current)
+	t_list *node1 = ft_lstnew(ft_strdup("S"));
+	t_list *node2 = ft_lstnew(ft_strdup("G"));
+	t_list *node3 = ft_lstnew(ft_strdup("P"));
+	node1 -> next = node2;
+	node2 -> next = NULL;
+	ft_lstadd_front(&node1, node3);
+	t_list *tmp = node3;
+	while(tmp)
 	{
-		printf("Conteúdo: %s\n", (char *)current->content);
-		current = current->next;
+		printf("%s\n", (char*)tmp -> content);
+		tmp = tmp -> next;	
 	}
-	free(node1);
-	free(node2);
-	return (0);
+	ft_lstclear(&node3, free);
 }
 	*/

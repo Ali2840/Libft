@@ -6,17 +6,13 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 14:44:15 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/30 12:12:20 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/10 13:45:36 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		countword(const char *s, char c);
-void	*allocate_word(const char *s, int start, int end);
-void	*ft_free(char **strs, int count);
-
-int	countword(const char *s, char c)
+static int	countword(const char *s, char c)
 {
 	int	i;
 	int	countword;
@@ -32,7 +28,7 @@ int	countword(const char *s, char c)
 	return (countword);
 }
 
-void	*allocate_word(const char *s, int start, int end)
+static void	*allocate_word(const char *s, int start, int end)
 {
 	char	*word;
 	int		i;
@@ -53,7 +49,7 @@ void	*allocate_word(const char *s, int start, int end)
 	return (word);
 }
 
-void	*ft_free(char **strs, int count)
+static void	*ft_free(char **strs, int count)
 {
 	int	i;
 
@@ -67,24 +63,15 @@ void	*ft_free(char **strs, int count)
 	return (NULL);
 }
 
-void	ft_initvar(int *i, int *word_index, int *word_start)
+static char	**create_arr(char **bi_array, const char *s, char c)
 {
-	*i = 0;
-	*word_index = 0;
-	*word_start = 0;
-}
+	int	i;
+	int	word_start;
+	int	word_index;
 
-char	**ft_split(char const *s, char c)
-{
-	char	**bi_array;
-	int		i;
-	int		word_index;
-	int		word_start;
-
-	ft_initvar(&i, &word_index, &word_start);
-	bi_array = ft_calloc(countword(s, c) + 1, sizeof(char *));
-	if (!s || !bi_array)
-		return (NULL);
+	i = 0;
+	word_index = 0;
+	word_start = 0;
 	while (s[i])
 	{
 		if (s[i] != c)
@@ -102,20 +89,35 @@ char	**ft_split(char const *s, char c)
 	}
 	return (bi_array);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	char	**bi_array;
+
+	if (!s)
+		return (NULL);
+	bi_array = ft_calloc(countword(s, c) + 1, sizeof(char *));
+	if (!bi_array)
+		return (NULL);
+	bi_array = create_arr(bi_array, s, c);
+	return (bi_array);
+}
 /*
 int	main(void)
 {
-	char	*s;
-	char	**split;
-	int		i;
+	char const	*s;
+	char		split;
+	char		**split_str;
+	int			i;
 
-	s = "            O meu               nome e goncalo           ";
-	split = ft_split(s, ' ');
+	s = "GLORIOSO SLB";
+	split = ' ';
+	split_str = ft_split(s, split);
 	i = 0;
-	while (split[i])
+	while(split_str[i])
 	{
-		printf("%s\n", split[i]);
-		i++;
+	printf("%s\n", split_str[i]);
+	i++;
 	}
 }
-*/
+	*/

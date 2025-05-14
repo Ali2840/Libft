@@ -6,11 +6,12 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 17:02:36 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 17:21:07 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/11 17:50:01 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -22,7 +23,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	start_index = 0;
-	end_index = ft_strlen((char *)s1) - 1;
+	end_index = ft_strlen(s1) - 1;
 	while (s1[start_index] && ft_strchr(set, s1[start_index]))
 		start_index++;
 	while (end_index > start_index && ft_strrchr(set, s1[end_index]))
@@ -32,10 +33,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trim);
 }
 
-/*
+
 int	main(void)
 {
-	char	s1[] = "     Hellloo   !!!!!";
+	char	s1[] = "!     Hellloo   !!!!!";
 	char	set[] = " !";
 	char	*str;
 
@@ -43,4 +44,3 @@ int	main(void)
 	printf("%s\n", str);
 	free(str);
 }
-*/

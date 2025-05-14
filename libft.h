@@ -6,16 +6,14 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:14:49 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 17:01:59 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:42:24 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 int					ft_atoi(const char *nptr);

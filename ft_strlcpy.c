@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:11:27 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/04/29 16:11:28 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/06 16:03:54 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,10 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	src_len;
 	size_t	i;
 
-	src_len = ft_strlen(src);
 	i = 0;
-	if (src_len + 1 < size)
-	{
-		while (src[i])
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	else if (size != 0)
+	if (size > 0)
 	{
 		while (src[i] && i < size - 1)
 		{
@@ -37,7 +26,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	return (src_len);
+	while (src[i])
+		i++;
+	return (i);
 }
 /*
 int	main(void){

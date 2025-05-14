@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:09:04 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/05/01 16:07:25 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:18:27 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,9 @@ t_list	*ft_lstnew(void *content)
 	return (element);
 }
 /*
-int	main(void)
+int main()
 {
-	t_list	*node;
-
-	node = ft_lstnew("Hello");
-	if (!node)
-		printf("Erro ao criar o no");
-	printf("Conteudo do no: %s\n", (char *)node->content);
-	free(node);
-	return (0);
+	t_list *node1 = ft_lstnew(ft_strdup("Hello"));
+	printf("%s", (char*)node1->content);
 }
 */

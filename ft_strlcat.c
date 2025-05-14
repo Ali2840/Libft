@@ -6,42 +6,34 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:11:20 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/05/01 18:19:43 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:08:06 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dst, const char *src, size_t n);
-
-char	*ft_strncat(char *dst, const char *src, size_t n)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = ft_strlen(dst);
-	while (src[i] && i < n)
-		dst[j++] = src[i++];
-	dst[j] = '\0';
-	return (dst);
-}
-
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	src_size;
-	size_t	dst_size;
+	size_t	src_len;
+	size_t	dst_len;
+	size_t	i;
 
-	src_size = ft_strlen(src);
-	dst_size = ft_strlen(dst);
-	if (size == 0)
-		return (src_size);
-	if (size <= dst_size)
-		return (size + src_size);
-	ft_strncat(dst, src, size - dst_size - 1);
-	return (dst_size + src_size);
+	src_len = ft_strlen(src);
+	dst_len = 0;
+	while (dst[dst_len] && dst_len < size)
+		dst_len++;
+	if (dst_len >= size)
+		return (size + src_len);
+	i = 0;
+	while (src[i] && (dst_len + i + 1) < size)
+	{
+		dst[dst_len + i] = src[i];
+		i++;
+	}
+	if (dst_len + i < size)
+		dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
 }
-
 /*
 int	main(void)
 {
@@ -50,13 +42,9 @@ int	main(void)
 	size_t	i;
 	size_t	size;
 
-	// size_t j;
 	size = 10;
 	i = ft_strlcat(dest, src, size);
 	printf("%zu\n", i);
 	printf("%s\n", dest);
-	// j = strlcat(dest, src, size);
-	// printf("%zu\n", j);
-	// printf("%s\n", dest);q
 }
 */

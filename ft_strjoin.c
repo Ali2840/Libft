@@ -6,7 +6,7 @@
 /*   By: gocaetan <gocaetan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:11:14 by gocaetan          #+#    #+#             */
-/*   Updated: 2025/05/01 18:17:38 by gocaetan         ###   ########.fr       */
+/*   Updated: 2025/05/07 16:15:13 by gocaetan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		total_size;
 	char	*ptr;
 
-	if (s1 == NULL && s2 == NULL)
+	if (!s1 || !s2)
 		return (NULL);
 	total_size = ft_strlen(s1) + ft_strlen(s2) + 1;
 	ptr = (char *)malloc((sizeof(char)) * total_size);
